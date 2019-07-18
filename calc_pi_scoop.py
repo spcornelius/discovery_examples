@@ -11,7 +11,7 @@ def calc_pi1(num_trials, pts_per_trial):
 
 
 def calc_pi2(num_trials, pts_per_trial):
-    areas = futures.map(run_trial, [pts_per_trial] * num_trials)
+    areas = list(futures.map(run_trial, [pts_per_trial] * num_trials))
     return 4 * np.mean(areas)
 
 
